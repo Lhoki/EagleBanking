@@ -11,8 +11,6 @@ tags:
     description: Manage transactions on a bank account
   - name: user
     description: Manage a user
-  - name: Authentication
-    description: Authentication APIs
 paths:
   /v1/accounts:
     post:
@@ -619,47 +617,10 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ErrorResponse"
-  /v1/auth/login:
-    post:
-      tags:
-        - Authentication
-      summary: Login and receive JWT token
-      description: Authenticates a user with email and password and returns a JWT token if successful.
-      operationId: login
-      security: []
-      requestBody:
-        description: Login credentials
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/LoginRequest'
-        required: true
-      responses:
-        '200':
-          description: Successfully authenticated
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AuthResponse'
-        '401':
-          description: Invalid credentials
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        '500':
-          description: An unexpected error occurred
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
     CreateBankAccountRequest:
       type: object
-      example:
-        name: "Personal Bank Account"
-        accountType: "personal"
       required:
         - name
         - accountType
@@ -675,9 +636,6 @@ components:
             - "personal"
     UpdateBankAccountRequest:
       type: object
-      example:
-        name: "Holiday Savings"
-        accountType: "personal"
       properties:
         name:
           type: string
@@ -746,11 +704,6 @@ components:
           format: 'date-time'
     CreateTransactionRequest:
       type: object
-      example:
-        amount: 25.00
-        currency: "GBP"
-        type: "deposit"
-        reference: "Initial deposit"
       required:
         - amount
         - currency
@@ -825,24 +778,11 @@ components:
           format: 'date-time'
     CreateUserRequest:
       type: object
-      example:
-        name: "Test User"
-        address:
-          line1: "1 Test Street"
-          line2: "Test Building"
-          line3: "Test District"
-          town: "London"
-          county: "Greater London"
-          postcode: "SW1A 1AA"
-        phoneNumber: "+441234567890"
-        email: "user@example.com"
-        password: "SecurePassword123"
       required:
         - name
         - address
         - phoneNumber
         - email
-        - password
       properties:
         name:
           type: string
@@ -874,21 +814,8 @@ components:
         email:
           type: string
           format: email    
-        password:
-          type: string
     UpdateUserRequest:
       type: object
-      example:
-        name: "Updated User"
-        address:
-          line1: "2 Test Street"
-          line2: "Updated Building"
-          line3: "Updated District"
-          town: "London"
-          county: "Greater London"
-          postcode: "SW1A 2AA"
-        phoneNumber: "+441234567891"
-        email: "user@example.com"
       properties:
         name:
           type: string
@@ -970,35 +897,6 @@ components:
         updatedTimestamp:
           type: string
           format: 'date-time'
-    LoginRequest:
-      type: object
-      description: Request to authenticate and receive a JWT token
-      example:
-        email: "user@example.com"
-        password: "SecurePassword123"
-      required:
-        - email
-        - password
-      properties:
-        email:
-          type: string
-          format: email
-          description: User's registered email
-          example: user@example.com
-        password:
-          type: string
-          description: User's password
-          example: SecurePassword123
-    AuthResponse:
-      type: object
-      description: Response containing the authentication token
-      required:
-        - token
-      properties:
-        token:
-          type: string
-          description: JWT access token
-          example: eyJhbGciOiJIUzI1NiJ9...
     ErrorResponse:
       type: object
       required:

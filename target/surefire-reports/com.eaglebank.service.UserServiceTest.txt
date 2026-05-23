@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.eaglebank.service.UserServiceTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 s -- in com.eaglebank.service.UserServiceTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in com.eaglebank.service.UserServiceTest

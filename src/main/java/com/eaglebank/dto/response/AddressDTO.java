@@ -14,24 +14,24 @@ import lombok.NoArgsConstructor;
 public class AddressDTO {
 
     @NotBlank
-    @Schema(description = "First line of address")
+    @Schema(description = "First line of address", example = "1 Test Street")
     private String line1;
 
-    @Schema(description = "Second line of address")
+    @Schema(description = "Second line of address", example = "Test Building")
     private String line2;
 
-    @Schema(description = "Third line of address")
+    @Schema(description = "Third line of address", example = "Test District")
     private String line3;
 
     @NotBlank
-    @Schema(description = "Town of address")
+    @Schema(description = "Town of address", example = "London")
     private String town;
 
     @NotBlank
-    @Schema(description = "County of address")
+    @Schema(description = "County of address", example = "Greater London")
     private String county;
 
     @NotBlank
-    @Schema(description = "Postcode of address")
+    @Schema(description = "Postcode of address", example = "SW1A 1AA")
     private String postcode;
 }

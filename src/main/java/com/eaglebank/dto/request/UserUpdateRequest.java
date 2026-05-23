@@ -27,6 +27,6 @@ public class UserUpdateRequest {
     private String phoneNumber;
 
     @Email
-    @Schema(description = "User's email address", example = "updated@example.com")
+    @Schema(description = "User's email address", example = "user@example.com")
     private String email;
 }

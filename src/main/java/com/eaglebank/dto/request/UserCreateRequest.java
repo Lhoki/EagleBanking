@@ -34,7 +34,7 @@ public class UserCreateRequest {
 
     @NotBlank
     @Email
-    @Schema(description = "User's email address", example = "test@example.com")
+    @Schema(description = "User's email address", example = "user@example.com")
     private String email;
 
     @NotBlank

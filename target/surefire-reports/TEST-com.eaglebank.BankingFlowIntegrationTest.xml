@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.eaglebank.controller.UserControllerTest" time="0.752" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.eaglebank.BankingFlowIntegrationTest" time="15.855" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -43,7 +43,7 @@
     <property name="localRepository" value="/home/chris/.m2/repository"/>
     <property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
     <property name="java.io.tmpdir" value="/tmp"/>
-    <property name="com.zaxxer.hikari.pool_number" value="2"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
     <property name="java.version" value="21.0.11-ea"/>
     <property name="user.dir" value="/home/chris/IdeaProjects/EagleBanking"/>
     <property name="os.arch" value="amd64"/>
@@ -59,9 +59,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="createUser_Success" classname="com.eaglebank.controller.UserControllerTest" time="0.028">
-    <system-out><![CDATA[2026-05-23T17:15:30.363+01:00  INFO 94 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.eaglebank.controller.UserControllerTest]: UserControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2026-05-23T17:15:30.370+01:00  INFO 94 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.eaglebank.EagleBankApplication for test class com.eaglebank.controller.UserControllerTest
+  <testcase name="fullBankingFlowTest" classname="com.eaglebank.BankingFlowIntegrationTest" time="11.356">
+    <system-out><![CDATA[17:15:14.285 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.eaglebank.BankingFlowIntegrationTest]: BankingFlowIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:15:14.381 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.eaglebank.EagleBankApplication for test class com.eaglebank.BankingFlowIntegrationTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -71,26 +71,26 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.5)
 
-2026-05-23T17:15:30.386+01:00  INFO 94 --- [           main] c.e.controller.UserControllerTest        : Starting UserControllerTest using Java 21.0.11-ea with PID 94 (started by chris in /home/chris/IdeaProjects/EagleBanking)
-2026-05-23T17:15:30.386+01:00  INFO 94 --- [           main] c.e.controller.UserControllerTest        : No active profile set, falling back to 1 default profile: "default"
-2026-05-23T17:15:30.554+01:00  INFO 94 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-05-23T17:15:30.563+01:00  INFO 94 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
-2026-05-23T17:15:30.668+01:00  INFO 94 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2026-05-23T17:15:30.670+01:00  INFO 94 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:eaglebank user=SA
-2026-05-23T17:15:30.670+01:00  INFO 94 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2026-05-23T17:15:30.671+01:00  INFO 94 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-05-23T17:15:30.673+01:00  INFO 94 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-05-23T17:15:30.676+01:00  INFO 94 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-05-23T17:15:30.755+01:00  INFO 94 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-05-23T17:15:30.768+01:00  INFO 94 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-05-23T17:15:30.860+01:00  WARN 94 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-05-23T17:15:30.932+01:00  INFO 94 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@15402cf4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2cd2fdd8, org.springframework.security.web.context.SecurityContextHolderFilter@1ec53257, org.springframework.security.web.header.HeaderWriterFilter@5995ba6c, org.springframework.web.filter.CorsFilter@7018c94, org.springframework.security.web.authentication.logout.LogoutFilter@7d68886c, com.eaglebank.security.JwtAuthenticationFilter@5c8adab7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@781f8d26, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c2d0e93, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@26e42464, org.springframework.security.web.session.SessionManagementFilter@6a6580d6, org.springframework.security.web.access.ExceptionTranslationFilter@87dc829, org.springframework.security.web.access.intercept.AuthorizationFilter@1da78c7c]
-2026-05-23T17:15:31.019+01:00  INFO 94 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:eaglebank'
-2026-05-23T17:15:31.040+01:00  INFO 94 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2026-05-23T17:15:31.040+01:00  INFO 94 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2026-05-23T17:15:31.040+01:00  INFO 94 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2026-05-23T17:15:31.047+01:00  INFO 94 --- [           main] c.e.controller.UserControllerTest        : Started UserControllerTest in 0.675 seconds (process running for 17.386)
+2026-05-23T17:15:14.672+01:00  INFO 94 --- [           main] c.eaglebank.BankingFlowIntegrationTest   : Starting BankingFlowIntegrationTest using Java 21.0.11-ea with PID 94 (started by chris in /home/chris/IdeaProjects/EagleBanking)
+2026-05-23T17:15:14.673+01:00  INFO 94 --- [           main] c.eaglebank.BankingFlowIntegrationTest   : No active profile set, falling back to 1 default profile: "default"
+2026-05-23T17:15:15.393+01:00  INFO 94 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-23T17:15:15.441+01:00  INFO 94 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 3 JPA repository interfaces.
+2026-05-23T17:15:15.956+01:00  INFO 94 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-23T17:15:16.120+01:00  INFO 94 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:eaglebank user=SA
+2026-05-23T17:15:16.122+01:00  INFO 94 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-23T17:15:16.165+01:00  INFO 94 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-23T17:15:16.212+01:00  INFO 94 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-23T17:15:16.237+01:00  INFO 94 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-23T17:15:16.409+01:00  INFO 94 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-23T17:15:17.285+01:00  INFO 94 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-23T17:15:17.323+01:00  INFO 94 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-23T17:15:17.856+01:00  WARN 94 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-23T17:15:18.196+01:00  INFO 94 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2e5ff1d4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a16583d, org.springframework.security.web.context.SecurityContextHolderFilter@5b5f06bb, org.springframework.security.web.header.HeaderWriterFilter@77d7d2d0, org.springframework.web.filter.CorsFilter@59da4992, org.springframework.security.web.authentication.logout.LogoutFilter@5246453e, com.eaglebank.security.JwtAuthenticationFilter@48619f15, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54519d74, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ec96512, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@20425fab, org.springframework.security.web.session.SessionManagementFilter@79fbcef4, org.springframework.security.web.access.ExceptionTranslationFilter@1315f1d5, org.springframework.security.web.access.intercept.AuthorizationFilter@22b2d9e3]
+2026-05-23T17:15:18.511+01:00  INFO 94 --- [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:eaglebank'
+2026-05-23T17:15:18.574+01:00  INFO 94 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-05-23T17:15:18.575+01:00  INFO 94 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-05-23T17:15:18.576+01:00  INFO 94 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-05-23T17:15:18.596+01:00  INFO 94 --- [           main] c.eaglebank.BankingFlowIntegrationTest   : Started BankingFlowIntegrationTest in 4.115 seconds (process running for 4.935)
 ]]></system-out>
   </testcase>
-  <testcase name="createUser_InvalidPhoneNumber" classname="com.eaglebank.controller.UserControllerTest" time="0.033"/>
 </testsuite>

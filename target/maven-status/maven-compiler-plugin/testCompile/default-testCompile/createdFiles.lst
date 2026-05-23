@@ -1,4 +1,4 @@
 com/eaglebank/service/TransactionServiceTest.class
-com/eaglebank/service/AccountServiceTest.class
 com/eaglebank/controller/UserControllerTest.class
+com/eaglebank/service/AccountServiceTest.class
 com/eaglebank/service/UserServiceTest.class

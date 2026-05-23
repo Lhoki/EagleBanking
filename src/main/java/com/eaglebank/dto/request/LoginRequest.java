@@ -17,7 +17,7 @@ public class LoginRequest {
 
     @NotBlank
     @Email
-    @Schema(description = "User's registered email", example = "john.doe@example.com")
+    @Schema(description = "User's registered email", example = "user@example.com")
     private String email;
 
     @NotBlank
